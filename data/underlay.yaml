@@ -1,0 +1,25 @@
+---
+fabric:
+  underlay:
+    loopbacks:
+      - device: SPINE-1
+        ipv4_address: 10.1.100.1
+      - device: SPINE-2
+        ipv4_address: 10.1.100.2
+      - device: LEAF-1
+        ipv4_address: 10.1.100.3
+      - device: LEAF-2
+        ipv4_address: 10.1.100.4
+
+    vtep_loopbacks:
+      - device: LEAF-1
+        ipv4_address: 10.1.200.1
+      - device: LEAF-2
+        ipv4_address: 10.1.200.2
+
+    leaf_fabric_interface_prefix: 1/
+    leaf_fabric_interface_offset: 1
+    spine_fabric_interface_prefix: 1/
+    spine_fabric_interface_offset: 1
+
+    anycast_rp_ipv4_address: 10.1.101.1
