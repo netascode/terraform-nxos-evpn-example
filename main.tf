@@ -31,7 +31,7 @@ data "utils_yaml_merge" "model" {
 
 module "nxos_evpn_ospf_underlay" {
   source  = "netascode/evpn-ospf-underlay/nxos"
-  version = ">= 0.1.1"
+  version = ">= 0.1.2"
 
   leafs                         = local.leafs
   spines                        = local.spines
@@ -49,7 +49,7 @@ module "nxos_evpn_ospf_underlay" {
 
 module "nxos_evpn_overlay" {
   source  = "netascode/evpn-overlay/nxos"
-  version = ">= 0.1.0"
+  version = ">= 0.2.0"
 
   leafs                = local.leafs
   spines               = local.spines
@@ -59,4 +59,6 @@ module "nxos_evpn_overlay" {
   bgp_asn              = lookup(local.model.fabric.overlay, "bgp_asn", null)
   l3_services          = lookup(local.model.fabric.overlay, "l3_services", null)
   l2_services          = lookup(local.model.fabric.overlay, "l2_services", null)
+
+  depends_on = [module.nxos_evpn_ospf_underlay]
 }
