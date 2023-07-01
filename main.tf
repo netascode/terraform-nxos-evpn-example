@@ -3,12 +3,12 @@ terraform {
 
   required_providers {
     nxos = {
-      source  = "netascode/nxos"
-      version = ">=0.3.19"
+      source  = "CiscoDevNet/nxos"
+      version = ">= 0.5.0"
     }
     utils = {
       source  = "netascode/utils"
-      version = ">= 0.1.1"
+      version = ">= 0.2.5"
     }
   }
 }
@@ -31,7 +31,7 @@ data "utils_yaml_merge" "model" {
 
 module "nxos_evpn_ospf_underlay" {
   source  = "netascode/evpn-ospf-underlay/nxos"
-  version = ">= 0.1.2"
+  version = ">= 0.2.0"
 
   leafs                         = local.leafs
   spines                        = local.spines
@@ -49,7 +49,7 @@ module "nxos_evpn_ospf_underlay" {
 
 module "nxos_evpn_overlay" {
   source  = "netascode/evpn-overlay/nxos"
-  version = ">= 0.2.0"
+  version = ">= 0.3.0"
 
   leafs                = local.leafs
   spines               = local.spines

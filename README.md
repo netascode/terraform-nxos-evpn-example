@@ -1,6 +1,6 @@
 # Cisco Nexus 9000 EVPN Terraform Example
 
-This example demonstrates how the [NX-OS Terraform Provider](https://registry.terraform.io/providers/netascode/nxos/latest/docs) can be used to build a Cisco Nexus 9000 EVPN Fabric. It currently supports underlay and overlay configuration, but no access interfaces.
+This example demonstrates how the [NX-OS Terraform Provider](https://registry.terraform.io/providers/CiscoDevNet/nxos/latest/docs) can be used to build a Cisco Nexus 9000 EVPN Fabric. It currently supports underlay and overlay configuration, but no access interfaces.
 
 It uses the following Terraform Modules:
 
